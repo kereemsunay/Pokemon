@@ -8,23 +8,31 @@
 
 import UIKit
 
-class detailsVCViewController: UIViewController {
+class detailsVC: UIViewController {
 
+    var selectedPokemon : Pokemon?
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var attackLabel: UILabel!
+    
+    @IBOutlet weak var defenseLabel: UILabel!
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        NameLabel.text = selectedPokemon?.name
+        imageView.image = selectedPokemon?.image
+        attackLabel.text = "\(selectedPokemon?.attack ?? 0)"
+        defenseLabel.text = "\(selectedPokemon?.defense ?? 0)"
+        speedLabel.text = "\(selectedPokemon?.speed ?? 0)"
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
